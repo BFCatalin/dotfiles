@@ -1,0 +1,87 @@
+set nu
+set relativenumber
+set clipboard+=unnamed
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set showmatch
+set autoindent
+set incsearch
+set nohlsearch
+set showmode
+set surround
+set foldmethod=2
+let mapleader=" "
+
+set nerdtree
+
+nnoremap p "0p
+nnoremap P "0P
+vnoremap p "0p
+vnoremap P "0P
+vnoremap x "0x
+nnoremap x "0x
+map <leader>sg <Action>(FindInPath)
+map <leader>d "_d
+xmap <leader>d "_d
+nmap <leader><CR> i<CR><ESC>
+
+" Comment lines
+map <leader>c <action>(CommentByLineComment)
+
+" Go to code
+nmap <leader>gd <Action>(GotoDeclaration)
+nmap <leader>gy <Action>(GotoTypeDeclaration)
+nmap <leader>gi <Action>(GotoImplementation)
+nmap gi <Action>(GotoImplementation)
+nmap <leader>gu <Action>(ShowUsages)
+nmap <leader>gt <Action>(GotoTest)
+nmap <leader>gf <Action>(Back)
+nmap <leader>gb <Action>(Forward)
+
+" Git windows
+map <leader>gc <Action>(CheckinProject)
+map <leader>gs <Action>(ActivateVersionControlToolWindow)
+map <leader>gb <Action>(Git.Branches):Forward
+
+" Refactoring
+map <leader>rn <Action>(RenameElement)
+map <leader>rm <Action>(ExtractMethod)
+map <leader>rv <Action>(IntroduceVariable)
+map <leader>rf <Action>(IntroduceField)
+map <leader>rs <Action>(ChangeSignature)
+map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+map <leader>ra <Action>(ShowIntentionActions)
+map <leader>rd <Action>(SafeDelete)
+
+" Window splits
+map <leader>wv <Action>(SplitVertically)
+map <leader>ws <Action>(SplitHorizontally)
+map <leader>wu <Action>(Unsplit)
+map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
+nmap <leader>wh <C-w>h
+nmap <leader>wj <C-w>j
+nmap <leader>wk <C-w>k
+nmap <leader>wl <C-w>l
+
+" Folding
+map <leader>zc :action CollapseAllRegions<CR>
+map <leader>zo :action ExpandAllRegions<CR>
+map <leader>z2 :action ExpandAllToLevel2<CR>
+
+" Formatting
+nnoremap <leader>fc  :action ReformatCode<CR>
+nnoremap <leader>fi :action OptimizeImports<CR>
+
+" Navigation
+nnoremap <leader>nf :action RecentFiles<CR>
+nnoremap <leader>nl :action RecentLocations<CR>
+nnoremap <leader>nh :action LocalHistory.ShowHistory<CR>
+nnoremap gb :action Back<CR>
+nnoremap gf :action Forward<CR>
+nnoremap gn :action GotoNextError<CR>
+nnoremap gp :action GotoPreviousError<CR>
+
+" Paste
+imap <C-v> <Action>(EditorPaste)

@@ -38,6 +38,8 @@ nnoremap <leader>m :vsc Edit.NextMethod<cr>
 nnoremap <leader>M :vsc Edit.PreviousMethod<cr>
 nnoremap gn :vsc View.NextError<CR>
 nnoremap gp :vsc View.PreviousError<CR>
+nnoremap gb :vsc View.NavigateBackward<CR>
+nnoremap gf :vsc View.NavigateForward<CR>
 
 """ Folding
 nnoremap <leader>zz :vsc Edit.CollapseToDefinitions<CR>

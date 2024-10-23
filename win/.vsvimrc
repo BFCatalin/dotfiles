@@ -14,6 +14,9 @@ set clipboard=unnamed
 map <leader>ra :vsc View.QuickActions<CR>
 map zl :so ~/.vsvimrc<CR>
 
+vnoremap x "0x
+nnoremap x "0x
+
 """ Testing & debug
 " testing and debugging
 nnoremap <leader>b :vsc Debug.ToggleBreakpoint<cr>
@@ -31,7 +34,8 @@ vmap <leader>rm :vsc Refactor.ExtractMethod<CR>
 nmap <leader>ri :vsc Refactor.ExtractInterface<CR>
 
 """ Navigation
-nnoremap gi :vsc Edit.GoToImplementation<CR>
+nnoremap gi :vsc Edit.GoToImplementation<CR><Esc>
+nnoremap gd :vsc Edit.GoToDefinition<CR><Esc>
 map gr :vsc Edit.FindAllReferences<CR>
 map gp :vsc Edit.PeekDefinition<CR>
 nnoremap <leader>m :vsc Edit.NextMethod<cr>

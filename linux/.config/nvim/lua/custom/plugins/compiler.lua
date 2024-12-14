@@ -6,8 +6,21 @@ return {
     opts = {},
     keys = {
       {
+        '<C-F7>',
+        '<cmd>CompilerToggleResults<cr>',
+        'Compiler toggle results',
+        { silent = true, noremap = true },
+      },
+      {
         '<F6>',
         '<cmd>CompilerOpen<cr>',
+        'Compiler open',
+        { silent = true, noremap = true },
+      },
+      {
+        '<C-b>',
+        '<cmd>CompilerStop<cr>' .. '<cmd>CompilerRedo<cr>',
+        'Compiler redo last action',
         { silent = true, noremap = true },
       },
     },
